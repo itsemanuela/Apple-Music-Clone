@@ -5,17 +5,16 @@ import Player from "./Components/Player";
 import MyFooter from "./Components/MyFooter";
 import Banner from "./Components/Banner";
 import FavoriteSidebar from "./Components/FavoriteSidebar";
+import ModalAbbonamento from "./Components/ModalAbbonamento";
 
 function App() {
   const [showFavorites, setShowFavorites] = useState(false);
-
-  const handleOpenFavorites = () => setShowFavorites(true);
-  const handleCloseFavorites = () => setShowFavorites(false);
+  const [showSubscription, setShowSubscription] = useState(false);
 
   return (
     <div className="w-100" style={{ position: "relative" }}>
       <div className="sidebar-apple">
-        <MySidebar onOpenFavorites={handleOpenFavorites} />
+        <MySidebar onOpenFavorites={() => setShowFavorites(true)} />
       </div>
 
       <div className="main-content-offset">
@@ -27,11 +26,16 @@ function App() {
         <Player />
       </div>
 
-      <Banner />
+      <Banner onOpenSub={() => setShowSubscription(true)} />
 
       <FavoriteSidebar
         show={showFavorites}
-        handleClose={handleCloseFavorites}
+        handleClose={() => setShowFavorites(false)}
+      />
+
+      <ModalAbbonamento
+        show={showSubscription}
+        handleClose={() => setShowSubscription(false)}
       />
     </div>
   );

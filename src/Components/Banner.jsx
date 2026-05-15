@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 
-const Banner = () => {
+const Banner = ({ onOpenSub }) => {
   return (
     <div className="red-banner-fixed shadow-lg">
       <Container fluid className="px-4 h-100">
@@ -18,6 +18,7 @@ const Banner = () => {
             <Button
               variant="light"
               className="text-danger fw-bold px-4 rounded-3 border-0"
+              onClick={onOpenSub}
             >
               Prova gratis
             </Button>
