@@ -33,3 +33,51 @@
   margin-left: 300px;  
   padding: 40px;
 }
+
+/*Griglia principale delle due card novità*/
+ 
+.hero-card-container {
+  height: 300px;  
+  border-radius: 32px !important;  
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero-card-container:hover {
+  transform: scale(1.02);  
+}
+ 
+.square-card-container {
+  aspect-ratio: 1 / 1;  
+  border-radius: 15px !important;  
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);  
+  transition: transform 0.3s ease;
+  cursor:pointer;
+}
+
+.square-card-container:hover {
+  transform: translateY(-5px);  
+}
+ 
+.object-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*placeholder della barra di ricerca*/
+ 
+.sidebar-apple input:focus {
+  background-color: #e2e2e4 !important;  
+  box-shadow: none !important;
+  outline: none;
+}
+ 
+.sidebar-apple input::placeholder {
+  color: #8e8e93;
+  opacity: 1;
+}

@@ -5,7 +5,11 @@ const MySidebar = () => {
   return (
     <nav className="sidebar-apple">
       <div className="mb-5 ps-2">
-        <img src={musicLogo} alt="logo" style={{ width: "110px" }} />
+        <img
+          src={musicLogo}
+          alt="logo"
+          style={{ width: "110px", cursor: "pointer" }}
+        />
       </div>
 
       <div className="nav flex-column mb-auto">
@@ -22,9 +26,30 @@ const MySidebar = () => {
           <span>Novità</span>
         </div>
 
-        <div className="sidebar-item mb-2 py-2 px-4 d-flex align-items-center">
-          <i className="bi bi-search me-3 fs-5 text-muted"></i>
-          <span className="text-muted fw-medium">Cerca</span>
+        <div className="mb-4 px-2">
+          <div className="position-relative">
+            <i
+              className="bi bi-search position-absolute text-muted"
+              style={{
+                left: "12px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontSize: "14px",
+              }}
+            ></i>
+            <input
+              type="text"
+              className="form-control border-0 shadow-none ps-5 py-2"
+              placeholder="Cerca"
+              style={{
+                backgroundColor: "#EBEBED",
+                borderRadius: "10px",
+                fontSize: "15px",
+                fontWeight: "400",
+                color: "#3c3c43",
+              }}
+            />
+          </div>
         </div>
 
         <div className="sidebar-item mb-2 py-2 px-4 d-flex align-items-center">
