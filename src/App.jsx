@@ -1,4 +1,4 @@
-import MySidebar from "./components/MySidebar";
+import MySidebar from "./Components/MySidebar";
 import MainContent from "./Components/MainContent";
 import MyBottomNav from "./Components/MyBottomNav";
 import Player from "./Components/Player";

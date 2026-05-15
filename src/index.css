@@ -1,1 +1,33 @@
+ /* src/App.css */
  
+html, body, #root {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+ 
+[data-bs-theme=dark] {
+  --bs-body-bg: #ffffff !important;
+  --bs-body-color: #000000 !important;
+  --bs-tertiary-bg: #FAFAFB !important;
+}
+
+ 
+.sidebar-link {
+  color: #3c3c43 !important;  
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sidebar-link:hover {
+  color: #fa243c !important;  
+}
+
+ 
+.active-apple {
+  background-color: #EBEBED !important;  
+  color: #fa243c !important;          
+  font-weight: 700 !important;
+  border-radius: 8px;
+}

@@ -1,44 +1,78 @@
 const MySidebar = () => {
   return (
     <nav
-      className="col-md-3 col-lg-2 d-none d-md-flex flex-column p-3 border-end border-secondary h-100"
-      style={{ backgroundColor: "#1f1f1f" }}
+      className="col-md-3 col-lg-2 d-none d-md-flex flex-column p-4"
+      style={{
+        backgroundColor: "#FAFAFB",
+        borderRight: "1px solid #E5E5E5",
+        height: "100vh",
+        position: "fixed",
+        left: 0,
+        top: 0,
+        zIndex: 1000,
+      }}
     >
-      <div className="d-flex align-items-center mb-4 px-2 text-white">
-        <i className="bi bi-apple fs-3 text-danger me-2"></i>
-        <span className="fw-bold fs-5">Music</span>
-      </div>
-
-      <div className="position-relative mb-4 px-2">
-        <span className="position-absolute top-50 start-0 translate-middle-y ps-4 text-muted small">
-          <i className="bi bi-search"></i>
+      <div
+        className="mb-4 ps-2 d-flex align-items-center"
+        style={{ color: "#000000" }}
+      >
+        <i className="bi bi-apple fs-2"></i>
+        <span className="fw-bold fs-4 ms-1" style={{ letterSpacing: "-1px" }}>
+          Music
         </span>
-        <input
-          className="form-control bg-dark border-0 text-white rounded-3 ps-5 shadow-none custom-sidebar-search"
+      </div>
+
+      <div className="nav flex-column mb-auto">
+        <div
+          className="mb-2 py-2 px-2 d-flex align-items-center"
+          style={{ color: "#3c3c43", cursor: "pointer", fontWeight: "500" }}
+        >
+          <i className="bi bi-search me-3 fs-5"></i> Cerca
+        </div>
+        <div
+          className="mb-2 py-2 px-2 d-flex align-items-center"
+          style={{ color: "#3c3c43", cursor: "pointer", fontWeight: "500" }}
+        >
+          <i className="bi bi-house me-3 fs-5"></i> Home
+        </div>
+
+        <div
+          className="mb-2 py-2 px-2 d-flex align-items-center rounded-3 shadow-sm"
           style={{
-            backgroundColor: "#2b2b2c",
-            fontSize: "14px",
-            paddingBlock: "6px",
+            backgroundColor: "#EBEBED",
+            color: "#fa243c",
+            fontWeight: "700",
           }}
-          type="search"
-          placeholder="Cerca"
-        />
+        >
+          <i className="bi bi-grid-fill me-3 fs-5"></i> Novità
+        </div>
+
+        <div
+          className="mb-2 py-2 px-2 d-flex align-items-center"
+          style={{ color: "#3c3c43", cursor: "pointer", fontWeight: "500" }}
+        >
+          <i className="bi bi-radio me-3 fs-5"></i> Radio
+        </div>
       </div>
 
-      <div className="nav flex-column nav-pills mb-auto px-1">
-        <button className="nav-link text-white text-start active bg-danger mb-1 border-0 rounded-3">
-          <i className="bi bi-house-door-fill me-3"></i>Ascolta ora
+      <div className="mt-auto pb-4">
+        <div
+          className="mb-3 ps-2 d-flex align-items-center"
+          style={{
+            color: "#fa243c",
+            fontSize: "14px",
+            cursor: "pointer",
+            fontWeight: "500",
+          }}
+        >
+          <i className="bi bi-arrow-up-right-square me-2"></i> Apri in Musica
+        </div>
+        <button
+          className="btn w-100 rounded-pill fw-bold py-2 border-0 shadow-sm"
+          style={{ backgroundColor: "#fa243c", color: "white" }}
+        >
+          Accedi
         </button>
-        <button className="nav-link text-white text-start mb-1 border-0 rounded-3 custom-btn-sidebar">
-          <i className="bi bi-compass me-3"></i>Scopri
-        </button>
-        <button className="nav-link text-white text-start mb-1 border-0 rounded-3 custom-btn-sidebar">
-          <i className="bi bi-radio me-3"></i>Radio
-        </button>
-      </div>
-
-      <div className="pt-3 border-top border-secondary text-muted small px-2">
-        <span>Emanuela's Clone</span>
       </div>
     </nav>
   );
