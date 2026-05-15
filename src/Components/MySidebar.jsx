@@ -16,10 +16,11 @@ const MySidebar = () => {
         className="mb-4 ps-2 d-flex align-items-center"
         style={{ color: "#000000" }}
       >
-        <i className="bi bi-apple fs-2"></i>
-        <span className="fw-bold fs-4 ms-1" style={{ letterSpacing: "-1px" }}>
-          Music
-        </span>
+        <img
+          src="./src/assets/music.svg"
+          alt="logo"
+          style={{ width: "100px", height: "auto", cursor: "pointer" }}
+        />
       </div>
 
       <div className="nav flex-column mb-auto">

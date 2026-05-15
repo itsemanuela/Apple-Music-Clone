@@ -1,2 +1,2 @@
-const MyCard = () => {};
-export default MyCard;
+const MyCards = () => {};
+export default MyCards;
