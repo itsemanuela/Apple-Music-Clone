@@ -4,10 +4,26 @@ import {
   SET_LOADING,
   SET_ERROR,
   TOGGLE_SIDEBAR,
+  SET_CURRENT_SONG,
+  TOGGLE_PLAY,
+  STOP_PLAY,
 } from "./type";
 
 export const toggleSidebarAction = () => ({
   type: TOGGLE_SIDEBAR,
+});
+
+export const setCurrentSongAction = (canzone) => ({
+  type: SET_CURRENT_SONG,
+  payload: canzone,
+});
+
+export const togglePlayAction = () => ({
+  type: TOGGLE_PLAY,
+});
+
+export const stopPlayAction = () => ({
+  type: STOP_PLAY,
 });
 
 export const fetchSongsAction = (query, category) => {
@@ -35,7 +51,6 @@ export const fetchSongsAction = (query, category) => {
       })
       .catch((err) => {
         dispatch({ type: SET_ERROR, payload: err.message });
-
         dispatch({ type: SET_LOADING, payload: false });
       });
   };

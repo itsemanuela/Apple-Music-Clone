@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSongsAction } from "../redux/actions";
+import { fetchSongsAction } from "../Redux/Actions";
 import { Spinner, Row, Col } from "react-bootstrap";
+
+import { setCurrentSongAction } from "../Redux/Actions";
 
 import img1a from "../assets/1a.png";
 import img1b from "../assets/1b.png";
@@ -90,10 +92,6 @@ const MainContent = () => {
                     alt="Novità"
                   />
                 </div>
-                <p className="mb-0 fw-medium text-dark text-truncate small">
-                  Release Locale
-                </p>
-                <p className="text-muted small text-truncate">Special Pack</p>
               </Col>
             ))}
           </Row>
@@ -111,7 +109,11 @@ const MainContent = () => {
             <Row className="row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
               {nuoveUscite.slice(0, 5).map((song) => (
                 <Col key={song.id}>
-                  <div className="square-card-container shadow-sm mb-2">
+                  <div
+                    className="square-card-container shadow-sm mb-2 img-thumbnail p-0"
+                    onClick={() => dispatch(setCurrentSongAction(song))}
+                    style={{ cursor: "pointer" }}
+                  >
                     <img
                       src={song.album.cover_big}
                       className="w-100 h-100 object-fit-cover"
@@ -135,7 +137,11 @@ const MainContent = () => {
           <Row className="row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
             {altroScoprire.slice(0, 5).map((song) => (
               <Col key={song.id}>
-                <div className="square-card-container shadow-sm mb-2">
+                <div
+                  className="square-card-container shadow-sm mb-2 img-thumbnail p-0"
+                  onClick={() => dispatch(setCurrentSongAction(song))}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     src={song.album.cover_big}
                     className="w-100 h-100 object-fit-cover"
