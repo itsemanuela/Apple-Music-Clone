@@ -1,8 +1,16 @@
 import img1a from "../assets/1a.png";
 import img1b from "../assets/1b.png";
-import img1c from "../assets/1c.png";
+import img2a from "../assets/2a.png";
+import img2b from "../assets/2b.png";
+import img2c from "../assets/2c.png";
+import img2d from "../assets/2d.png";
+import img2e from "../assets/2e.png";
+import img2f from "../assets/2f.png";
 
 const MainContent = () => {
+  // Array pulito con le tue 6 immagini della serie "2"
+  const immaginiNuoviArrivi = [img2a, img2b, img2c, img2d, img2e, img2f];
+
   return (
     <main>
       <section className="mb-5">
@@ -12,7 +20,6 @@ const MainContent = () => {
           </h2>
           <i className="bi bi-chevron-right ms-2 fs-4 text-muted opacity-50"></i>
         </div>
-
         <div className="row g-4">
           <div className="col-12 col-md-6">
             <div className="border-top pt-2 mb-3">
@@ -27,7 +34,6 @@ const MainContent = () => {
               />
             </div>
           </div>
-
           <div className="col-12 col-md-6">
             <div className="border-top pt-2 mb-3">
               <p className="text-muted small fw-bold mb-1">RADIO</p>
@@ -56,14 +62,14 @@ const MainContent = () => {
         </div>
 
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div className="col" key={item}>
+          {immaginiNuoviArrivi.map((immagine, index) => (
+            <div className="col" key={index}>
               <div className="card border-0 bg-transparent h-100">
                 <div className="square-card-container shadow-sm mb-2">
                   <img
-                    src={img1c}
+                    src={immagine}
                     className="w-100 h-100 object-fit-cover"
-                    alt="Brano"
+                    alt={`Brano ${index + 1}`}
                   />
                 </div>
                 <div className="ps-1">

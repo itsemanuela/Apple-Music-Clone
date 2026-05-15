@@ -1,67 +1,125 @@
- /* src/App.css */
+ /* --- RESET E LAYOUT BASE --- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
+/* --- SIDEBAR APPLE (FISSA A SINISTRA) --- */
 .sidebar-apple {
- 
-  background-color: #ffffff !important; 
-  
- 
+  background-color: #ffffff !important;
   position: fixed;
   top: 20px;
   left: 20px;
   bottom: 20px;
-  
- 
   width: 260px;
-  
- 
   border-radius: 40px !important;
-  
-  
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
-  
- 
-  border: none !important;
-  
-  z-index: 1000;
+  z-index: 1500;  
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 30px 30px 110px 30px !important;
 }
 
  
 .main-content-offset {
   margin-left: 300px;  
   padding: 40px;
+  min-height: 100vh;
+ 
+  padding-bottom: 250px !important; 
 }
 
-/*Griglia principale delle due card novità*/
- 
+/* ---  CARDS  --- */
 .hero-card-container {
-  height: 300px;  
-  border-radius: 32px !important;  
+  height: 300px;
+  border-radius: 32px !important;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);  
-  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  cursor:pointer;
 }
 
 .hero-card-container:hover {
-  transform: scale(1.02);  
+  transform: scale(1.01);
 }
- 
+
 .square-card-container {
-  aspect-ratio: 1 / 1;  
-  border-radius: 15px !important;  
+  aspect-ratio: 1 / 1;
+  border-radius: 15px !important;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);  
   transition: transform 0.3s ease;
   cursor:pointer;
 }
 
 .square-card-container:hover {
-  transform: translateY(-5px);  
+  transform: translateY(-5px);
 }
+
+/* --- FOOTER  --- */
+.btn-esplora {
+  background-color: #f5f5f7;
+  border-radius: 12px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.btn-esplora span {
+  color:  #D60017;
+  font-weight: 500;
+}
+
+footer a {
+    color:black;
+}
+
+/* --- IL PLAYER  --- */
+.apple-player-container {
+  position: fixed;
+  bottom: 100px;  
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 850px;
+  z-index: 2100; 
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+  cursor:pointer;
+}
+
+/* --- IL BANNER ROSSO   --- */
+.red-banner-fixed {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;    
+  right: 0 !important;  
+  width: 100vw !important;
+  height: 85px !important;
+  background-color: #D60017 !important;
+  z-index: 2500;  
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+ 
+.red-banner-fixed h6, .red-banner-fixed p {
+  margin: 0;
+  color: white;
+  cursor:pointer;
+}
+
  
 .object-fit-cover {
   object-fit: cover;
@@ -69,15 +127,8 @@
   height: 100%;
 }
 
-/*placeholder della barra di ricerca*/
- 
 .sidebar-apple input:focus {
-  background-color: #e2e2e4 !important;  
+  background-color: #e2e2e4 !important;
   box-shadow: none !important;
   outline: none;
-}
- 
-.sidebar-apple input::placeholder {
-  color: #8e8e93;
-  opacity: 1;
 }
