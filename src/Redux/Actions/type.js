@@ -1,0 +1,5 @@
+export const SET_NUOVE_USCITE = "SET_NUOVE_USCITE";
+export const SET_ALTRO_SCOPRIRE = "SET_ALTRO_SCOPRIRE";
+export const SET_LOADING = "SET_LOADING";
+export const SET_ERROR = "SET_ERROR";
+export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
