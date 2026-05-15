@@ -5,10 +5,9 @@ import Player from "./Components/Player";
 
 function App() {
   return (
-    <div className="container-fluid vh-100 d-flex flex-column p-0 bg-white text-dark overflow-hidden">
-      <div className="row g-0 flex-grow-1 overflow-hidden">
-        <MySidebar />
-
+    <div className="container-fluid p-0 bg-white min-vh-100">
+      <MySidebar />
+      <div className="main-content-offset">
         <MainContent />
       </div>
 
