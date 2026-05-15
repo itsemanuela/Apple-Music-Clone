@@ -1,14 +1,21 @@
+import { useState } from "react";
 import MySidebar from "./Components/MySidebar";
 import MainContent from "./Components/MainContent";
 import Player from "./Components/Player";
 import MyFooter from "./Components/MyFooter";
 import Banner from "./Components/Banner";
+import FavoriteSidebar from "./Components/FavoriteSidebar";
 
 function App() {
+  const [showFavorites, setShowFavorites] = useState(false);
+
+  const handleOpenFavorites = () => setShowFavorites(true);
+  const handleCloseFavorites = () => setShowFavorites(false);
+
   return (
     <div className="w-100" style={{ position: "relative" }}>
       <div className="sidebar-apple">
-        <MySidebar />
+        <MySidebar onOpenFavorites={handleOpenFavorites} />
       </div>
 
       <div className="main-content-offset">
@@ -21,6 +28,11 @@ function App() {
       </div>
 
       <Banner />
+
+      <FavoriteSidebar
+        show={showFavorites}
+        handleClose={handleCloseFavorites}
+      />
     </div>
   );
 }

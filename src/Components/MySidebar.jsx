@@ -3,9 +3,8 @@ import { toggleSidebarAction } from "../redux/actions";
 import musicLogo from "../assets/music.svg";
 import "../App.css";
 
-const MySidebar = () => {
+const MySidebar = ({ onOpenFavorites }) => {
   const dispatch = useDispatch();
-
   const isSidebarOpen = useSelector((state) => state.music.isSidebarOpen);
 
   const handleToggle = () => {
@@ -96,6 +95,18 @@ const MySidebar = () => {
             <i className="bi bi-radio me-3 fs-5 text-muted"></i>
             <span className="text-muted fw-medium">Radio</span>
           </a>
+
+          <div
+            className="sidebar-link mb-2 py-2 px-4 d-flex align-items-center text-decoration-none"
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              onOpenFavorites();
+              if (isSidebarOpen) handleToggle();
+            }}
+          >
+            <i className="bi bi-heart me-3 fs-5 text-muted"></i>
+            <span className="text-muted fw-medium">Preferiti</span>
+          </div>
         </div>
 
         <div className="mt-auto w-100">
