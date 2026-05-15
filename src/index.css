@@ -159,45 +159,71 @@ body {
 /*Modale social*/
  
  
- 
-.modal-top-wide {
-  margin-top: 3rem !important;
-  max-width: 500px !important;  
+.modal-top-position {
+  margin-top: 2.5rem !important;
+  max-width: 350px !important;  
 }
 
 .share-modal-red {
   background: linear-gradient(145deg, #ff2d55, #d60017) !important;
-  border-radius: 2.5rem !important;  
+  border-radius: 2rem !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: white !important;
-  padding: 10px;  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
  
-.bubble-social-white {
-  width: 70px;  
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 2rem;  
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.song-preview-red {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bubble-social-white:hover {
-  background-color: white;
-  color: #d60017;
-  transform: scale(1.15);  
+.song-title-modal { font-weight: 700; letter-spacing: -0.2px; font-size: 0.9rem; }
+.artist-name-modal { font-weight: 400; color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; }
+
+ 
+.icon-social-giant {
+  font-size: 3.5rem !important;  
+  color: white !important;
+  display: block;
+  transition: all 0.3s ease;
+ 
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.icon-social-giant:hover {
+  transform: scale(1.1) translateY(-5px);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
 }
 
 .share-label-white {
-  font-size: 13px;  
-  font-weight: 600;
-  margin-top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
   color: white;
+}
+ 
+.btn-share-main {
+  background: white !important;
+  color: #d60017 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  font-size: 0.9rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-share-main:hover {
+  background-color: #fff1f1 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+ 
+.share-modal-red .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.8;
 }
