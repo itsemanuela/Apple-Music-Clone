@@ -1,6 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { togglePlayAction } from "../Redux/Actions";
+
+import {
+  togglePlayAction,
+  addToFavoritesAction,
+  removeFromFavoritesAction,
+} from "../Redux/Actions";
 
 const Player = () => {
   const dispatch = useDispatch();
@@ -9,15 +14,24 @@ const Player = () => {
   const currentSong = useSelector((state) => state.player.currentSong);
   const isPlaying = useSelector((state) => state.player.isPlaying);
 
+  const favorites = useSelector((state) => state.favorites.list);
+  const isFavorite =
+    currentSong && favorites.some((s) => s.id === currentSong.id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavoritesAction(currentSong.id));
+    } else {
+      dispatch(addToFavoritesAction(currentSong));
+    }
+  };
+
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying && currentSong?.preview) {
         audioRef.current.load();
         audioRef.current.play().catch((err) => {
-          console.warn(
-            "Riproduzione multimediale bloccata o interrotta dal browser:",
-            err,
-          );
+          console.warn("Riproduzione multimediale bloccata:", err);
         });
       } else {
         audioRef.current.pause();
@@ -38,7 +52,7 @@ const Player = () => {
       <div
         className="d-flex align-items-center justify-content-between px-4 py-2 rounded-pill shadow-lg border"
         style={{
-          width: "600px",
+          width: "650px",
           backgroundColor: "rgba(255, 255, 255, 0.7)",
           backdropFilter: "blur(20px)",
           borderColor: "rgba(0,0,0,0.1)",
@@ -47,7 +61,7 @@ const Player = () => {
       >
         <div
           className="d-flex align-items-center"
-          style={{ maxWidth: "180px" }}
+          style={{ maxWidth: "220px" }}
         >
           <img
             src={currentSong.album?.cover_small}
@@ -69,6 +83,14 @@ const Player = () => {
               {currentSong.artist?.name}
             </p>
           </div>
+
+          <i
+            className={`bi ${isFavorite ? "bi-heart-fill text-danger" : "bi-heart"} ms-3`}
+            style={{ cursor: "pointer", transition: "transform 0.2s" }}
+            onClick={handleFavoriteClick}
+            onMouseEnter={(e) => (e.target.style.transform = "scale(1.2)")}
+            onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+          ></i>
         </div>
 
         <div className="d-flex align-items-center text-secondary gap-3">
@@ -77,21 +99,17 @@ const Player = () => {
             className="bi bi-skip-start-fill fs-4"
             style={{ cursor: "pointer" }}
           ></i>
-
           <i
             className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"} fs-1 text-dark`}
             onClick={() => dispatch(togglePlayAction())}
             style={{ cursor: "pointer" }}
           ></i>
-
           <i
             className="bi bi-skip-end-fill fs-4"
             style={{ cursor: "pointer" }}
           ></i>
           <i className="bi bi-repeat" style={{ cursor: "pointer" }}></i>
         </div>
-
-        <i className="bi bi-apple fs-4 text-dark opacity-50 d-none d-sm-inline"></i>
 
         <div className="d-flex align-items-center text-secondary gap-2">
           <i className="bi bi-list-ul" style={{ cursor: "pointer" }}></i>
@@ -107,7 +125,6 @@ const Player = () => {
             onChange={(e) => {
               if (audioRef.current) audioRef.current.volume = e.target.value;
             }}
-            text-secondary
           />
         </div>
       </div>

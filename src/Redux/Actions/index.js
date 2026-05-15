@@ -7,6 +7,8 @@ import {
   SET_CURRENT_SONG,
   TOGGLE_PLAY,
   STOP_PLAY,
+  ADD_TO_FAVORITES,
+  REMOVE_FROM_FAVORITES,
 } from "./type";
 
 export const toggleSidebarAction = () => ({
@@ -24,6 +26,16 @@ export const togglePlayAction = () => ({
 
 export const stopPlayAction = () => ({
   type: STOP_PLAY,
+});
+
+export const addToFavoritesAction = (song) => ({
+  type: ADD_TO_FAVORITES,
+  payload: song,
+});
+
+export const removeFromFavoritesAction = (songId) => ({
+  type: REMOVE_FROM_FAVORITES,
+  payload: songId,
 });
 
 export const fetchSongsAction = (query, category) => {
