@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import musicReducer from "../reducers/musicReducer";
+import musicReducer from "../Reducers/musicReducer";
 import playerReducer from "../reducers/playerReducer";
 import favoritesReducer from "../Reducers/favoriteReducer";
 
