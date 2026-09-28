@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleSidebarAction } from "../redux/actions";
+import { toggleSidebarAction } from "../Redux/Actions";
 import musicLogo from "../assets/music.svg";
 import "../App.css";
 
@@ -10,7 +10,7 @@ const MySidebar = ({ onOpenFavorites, onOpenSub }) => {
 
   const handleToggle = () => {
     dispatch(toggleSidebarAction());
-  };
+  }; // questo è un comm di prova
 
   return (
     <>
